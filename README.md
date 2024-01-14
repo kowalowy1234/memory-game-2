@@ -10,4 +10,6 @@ See the figma design [here](https://www.figma.com/file/Cee8ottwI7oLf9ouuQEyRL/Me
 
 ### Technologies used
 
-(soon to be added)
+- Angular 17
+- SCSS
+- Typescript
