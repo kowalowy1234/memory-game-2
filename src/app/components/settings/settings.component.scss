@@ -1,0 +1,10 @@
+:host {
+    background-color: blue;
+    order: 2;
+}
+
+@media (min-width: 800px) {
+    :host {
+        order: 1;
+    }
+}
