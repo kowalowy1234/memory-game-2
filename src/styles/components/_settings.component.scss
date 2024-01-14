@@ -1,0 +1,10 @@
+app-settings {
+  background-color: blue;
+  order: 2;
+}
+
+@media (min-width: 800px) {
+  app-settings {
+    order: 1;
+  }
+}
