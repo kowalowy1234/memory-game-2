@@ -1,1 +1,6 @@
-<p>button works!</p>
+<button
+  (click)="click()"
+  [class]="'semi-bold uppercase button button-' + themeProperties[theme]"
+>
+  {{ buttonText }}
+</button>

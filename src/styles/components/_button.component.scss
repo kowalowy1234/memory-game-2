@@ -1,0 +1,46 @@
+app-button {
+  .button {
+    border: 0.7rem solid;
+    border-radius: 13.3rem;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    width: 15rem;
+    height: 5rem;
+    flex-shrink: 0;
+    letter-spacing: 0.1rem;
+    text-wrap: nowrap;
+    cursor: pointer;
+    transition: $t02;
+    margin: 2rem;
+
+    &-default {
+      color: #cce9ff;
+      text-shadow: 0px 0px 9.4px #9d2c2c;
+      background-color: #300737;
+      border-color: #ffe2e2;
+      box-shadow: 0px 0px 30px 0px #2c6d9d, 0px 0px 80px 0px #2c6d9d inset;
+    }
+
+    &-red {
+      color: #ffe2e2;
+      text-shadow: 0px 0px 9.4px #9d2c2c;
+      background-color: red;
+      background: #300737;
+      box-shadow: 0px 0px 30px 0px #9d2c2c, 0px 0px 80px 0px #9d2c2c inset;
+    }
+
+    &-green {
+      color: #d2ffd6;
+      text-shadow: 0px 0px 9.4px #37bc42;
+      background-color: green;
+      border-color: #d2ffd6;
+      box-shadow: 0px 0px 30px 0px #37bc42, 0px 0px 80px 0px #37bc42 inset;
+    }
+
+    &-default:hover,
+    &-red:hover,
+    &-green:hover {
+      filter: brightness(110%);
+    }
+  }
+}
