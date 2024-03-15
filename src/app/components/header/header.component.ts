@@ -26,4 +26,8 @@ export class HeaderComponent {
   focus = () => {
     this.gameControlsService.toggleFocus();
   };
+
+  toggleSettings = () => {
+    this.gameControlsService;
+  };
 }

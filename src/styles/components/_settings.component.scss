@@ -1,10 +1,80 @@
+$border: solid $color-bright-border 0.4rem;
+$box-shadow: 0 0 3rem $color-bright-shadow;
+
 app-settings {
-  background-color: blue;
+  background-color: $color-plain-purple;
   order: 2;
+  border-top: $border;
+  border-bottom: $border;
+  box-shadow: $box-shadow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+
+  .title {
+    font-size: 4rem;
+    line-height: 3.3rem;
+    letter-spacing: 0.6rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 3rem;
+    
+    .row {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      .label {
+        font-size: 3rem;
+        line-height: 2.3rem;
+        margin-bottom: 1rem;
+      }
+    }
+    
+    &::after {
+      content: '';
+      border: $border;
+      height: 2rem;
+      width: 2rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-left: none;
+      border-bottom: none;
+      border-radius: 0 5px;
+    }
+
+    &::before {
+      content: '';
+      border: $border;
+      height: 2rem;
+      width: 2rem;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-right: none;
+      border-top: none;
+      border-radius: 0 5px;
+    }
+  }
 }
 
-@media (min-width: 800px) {
+@media (min-width: $breakpoint-large) {
   app-settings {
     order: 1;
+    border: none;
+    border-right: $border;
   }
 }
