@@ -6,21 +6,24 @@ import { GameControlsService } from '../../services/game-controls.service';
   selector: 'app-header',
   standalone: true,
   imports: [ButtonComponent],
+  providers: [GameControlsService],
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {
   constructor(private gameControlsService: GameControlsService) {}
 
-  start() {
-    console.log(this.gameControlsService)
-    // this.gameControlsService.start();
-  }
+  // Arrow function in order to prevent 'this' binding to child
+  start = () => {
+    this.gameControlsService.start();
+  };
 
-  reset() {
+  // Arrow function in order to prevent 'this' binding to child
+  reset = () => {
     this.gameControlsService.reset();
-  }
+  };
 
-  focus() {
+  // Arrow function in order to prevent 'this' binding to child
+  focus = () => {
     this.gameControlsService.toggleFocus();
-  }
+  };
 }

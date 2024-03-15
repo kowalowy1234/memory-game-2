@@ -2,12 +2,10 @@ import { Injectable } from '@angular/core';
 import { FocusModeStatusEnum } from '../enums/focus-mode.enum';
 import { GameStatusEnum } from '../enums/game-status.enum';
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable()
 export class GameControlsService {
   focusModeStatus: FocusModeStatusEnum = FocusModeStatusEnum.OFF;
-  private gameStatus: GameStatusEnum = GameStatusEnum.IDLE;
+  gameStatus: GameStatusEnum = GameStatusEnum.IDLE;
 
   start() {
     this.gameStatus = GameStatusEnum.RUNNING;
@@ -25,6 +23,7 @@ export class GameControlsService {
   }
 
   reset() {
+    this.gameStatus = GameStatusEnum.IDLE;
     console.log('[Game has been reset.]');
   }
 
