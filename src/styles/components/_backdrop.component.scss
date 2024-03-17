@@ -1,0 +1,33 @@
+app-backdrop {
+  height: 100Vh;
+  width: 100Vw;
+  position: absolute;
+  pointer-events: none;
+
+  .backdrop {
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    pointer-events: none;
+    opacity: 0;
+    transition: $ts01;
+    transition-delay: 0.1s;
+  }
+}
+
+app-backdrop.visible {
+  .backdrop {
+    pointer-events: all;
+    opacity: 1;
+    transition-delay: 0;
+  }
+}
+
+@media (max-width: $breakpoint-medium) {
+  app-backdrop {
+    display: none;
+  }
+}

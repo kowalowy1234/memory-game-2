@@ -1,1 +1,23 @@
-<p>settings works!</p>
+<div class="settings-container">
+  <h2 class="title bold uppercase semi-bold text-shadow-white text-white">
+    settings
+  </h2>
+  <div class="container">
+    <div class="row">
+      <p class="label text-white uppercase semi-bold">card amount</p>
+      <select name="card-amount" class="select">
+        <option>20</option>
+      </select>
+    </div>
+    <div class="row">
+      <p class="label text-white uppercase semi-bold">difficulty</p>
+      <select name="card-amount" class="select">
+        <option>beginner</option>
+      </select>
+    </div>
+  </div>
+  <app-button buttonText="confirm" theme="green" [click]="confirmSettings"></app-button>
+</div>
+<button class="settings-closer" (click)="closeSettings()">
+  <i class="fa fa-solid fa-close close-icon 2xs"></i>
+</button>

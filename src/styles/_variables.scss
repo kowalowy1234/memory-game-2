@@ -1,10 +1,17 @@
 /* VARIABLES */
 $color-gold: #fff1a6;
+$color-plain-purple: #300737;
+$color-bright-border: #ffdefe;
+$color-bright-shadow: #ffc5fd;
+$text-color-white: #f1f1ff;
+$color-plain-purple-transparent: rgba(34, 6, 39, 0.681);
 
 /* BREAK POINTS */
 $breakpoint-smallest: 300px;
 $breakpoint-small: 450px;
 $breakpoint-medium: 800px;
+$breakpoint-large: 1060px;
 
 /* TRANSITIONS */
-$t02: all 0.2s;
+$ts02: all 0.2s;
+$ts01: all 0.1s;

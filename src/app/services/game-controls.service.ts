@@ -1,11 +1,19 @@
 import { Injectable } from '@angular/core';
 import { FocusModeStatusEnum } from '../enums/focus-mode.enum';
 import { GameStatusEnum } from '../enums/game-status.enum';
+import { SettingsStatusEnum } from '../enums/settings-status.enum';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class GameControlsService {
-  focusModeStatus: FocusModeStatusEnum = FocusModeStatusEnum.OFF;
-  gameStatus: GameStatusEnum = GameStatusEnum.IDLE;
+  focusModeStatus = FocusModeStatusEnum.OFF;
+  gameStatus = GameStatusEnum.IDLE;
+
+  settingsStatusSubject: BehaviorSubject<SettingsStatusEnum> =
+    new BehaviorSubject<SettingsStatusEnum>(SettingsStatusEnum.CLOSED);
+
+  settingsStatusObservable: Observable<SettingsStatusEnum> =
+    this.settingsStatusSubject.asObservable();
 
   start() {
     this.gameStatus = GameStatusEnum.RUNNING;
@@ -27,6 +35,22 @@ export class GameControlsService {
     console.log('[Game has been reset.]');
   }
 
+  turnOffFocusMode() {
+    this.focusModeStatus = FocusModeStatusEnum.OFF;
+  }
+
+  turnOnFocusMode() {
+    this.focusModeStatus = FocusModeStatusEnum.ON;
+  }
+
+  closeSettings() {
+    this.settingsStatusSubject.next(SettingsStatusEnum.CLOSED);
+  }
+
+  openSettings() {
+    this.settingsStatusSubject.next(SettingsStatusEnum.OPEN);
+  }
+
   toggleFocus() {
     switch (this.focusModeStatus) {
       case FocusModeStatusEnum.OFF:
@@ -41,11 +65,22 @@ export class GameControlsService {
     console.log(`[Focus mode is ${this.focusModeStatus}]`);
   }
 
-  turnOffFocusMode() {
-    this.focusModeStatus = FocusModeStatusEnum.OFF;
-  }
+  toggleSettings() {
+    let currentSettingStatus = this.settingsStatusSubject.getValue();
 
-  turnOnFocusMode() {
-    this.focusModeStatus = FocusModeStatusEnum.ON;
+    switch (currentSettingStatus) {
+      case SettingsStatusEnum.OPEN:
+        this.closeSettings();
+        break;
+      case SettingsStatusEnum.CLOSED:
+        this.openSettings();
+        break;
+      default:
+        break;
+    }
+
+    // refresh text info
+    currentSettingStatus = this.settingsStatusSubject.getValue();
+    console.log(`[Settings are ${currentSettingStatus}]`);
   }
 }

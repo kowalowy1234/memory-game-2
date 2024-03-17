@@ -14,3 +14,9 @@ app-root {
     url("../../assets/images/patternhead61a-thumb.png"),
     lightgray 0% 0% / 300px 300px repeat;
 }
+
+@media (min-width: $breakpoint-large) {
+  app-root {
+    flex-direction: row;
+  }
+}
