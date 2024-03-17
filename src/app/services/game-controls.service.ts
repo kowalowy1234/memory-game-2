@@ -4,20 +4,16 @@ import { GameStatusEnum } from '../enums/game-status.enum';
 import { SettingsStatusEnum } from '../enums/settings-status.enum';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class GameControlsService {
   focusModeStatus = FocusModeStatusEnum.OFF;
   gameStatus = GameStatusEnum.IDLE;
 
-  settingsStatus: BehaviorSubject<SettingsStatusEnum> =
+  settingsStatusSubject: BehaviorSubject<SettingsStatusEnum> =
     new BehaviorSubject<SettingsStatusEnum>(SettingsStatusEnum.CLOSED);
 
-  settingsStatus$: Observable<SettingsStatusEnum> =
-    this.settingsStatus.asObservable();
-
-  settingsSubscription$ = this.settingsStatus$.subscribe((r) =>
-    this.toggleSettings(r)
-  );
+  settingsStatusObservable: Observable<SettingsStatusEnum> =
+    this.settingsStatusSubject.asObservable();
 
   start() {
     this.gameStatus = GameStatusEnum.RUNNING;
@@ -48,11 +44,11 @@ export class GameControlsService {
   }
 
   closeSettings() {
-    this.settingsStatus.next(SettingsStatusEnum.CLOSED);
+    this.settingsStatusSubject.next(SettingsStatusEnum.CLOSED);
   }
 
   openSettings() {
-    this.settingsStatus.next(SettingsStatusEnum.OPEN);
+    this.settingsStatusSubject.next(SettingsStatusEnum.OPEN);
   }
 
   toggleFocus() {
@@ -69,8 +65,10 @@ export class GameControlsService {
     console.log(`[Focus mode is ${this.focusModeStatus}]`);
   }
 
-  toggleSettings(r: SettingsStatusEnum | undefined) {
-    switch (r) {
+  toggleSettings() {
+    let currentSettingStatus = this.settingsStatusSubject.getValue();
+
+    switch (currentSettingStatus) {
       case SettingsStatusEnum.OPEN:
         this.closeSettings();
         break;
@@ -80,6 +78,9 @@ export class GameControlsService {
       default:
         break;
     }
-    console.log(`[Settings are ${r}]`);
+
+    // refresh text info
+    currentSettingStatus = this.settingsStatusSubject.getValue();
+    console.log(`[Settings are ${currentSettingStatus}]`);
   }
 }

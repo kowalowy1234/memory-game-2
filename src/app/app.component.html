@@ -1,4 +1,4 @@
 <router-outlet> </router-outlet>
 <app-header></app-header>
-<app-settings *ngIf="showSettings"></app-settings>
+<app-settings [ngClass]="{ visible: showSettings }"></app-settings>
 <app-main></app-main>

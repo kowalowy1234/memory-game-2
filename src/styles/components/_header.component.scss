@@ -1,28 +1,26 @@
 app-header {
   order: 1;
   margin: 5rem auto;
-  .container {
-    .header {
-      display: flex;
-      align-items: center;
-      margin-bottom: 3rem;
+  .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
 
-      .heading {
-        font-size: 5rem;
-        line-height: 4rem;
-        margin-bottom: 1.2rem;
-        letter-spacing: 0.6rem;
-        text-align: center;
-        flex: 10;
-      }
+    .heading {
+      font-size: 5rem;
+      line-height: 4rem;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.6rem;
+      text-align: center;
+      flex: 10;
+    }
 
-      .settings-icon {
-        cursor: pointer;
-      }
+    .settings-icon {
+      cursor: pointer;
+    }
 
-      .empty {
-        flex: 1;
-      }
+    .empty {
+      flex: 1;
     }
   }
 }

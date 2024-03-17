@@ -1,3 +1,7 @@
+/* UTILITY IMPORTS */
+@import "./utility/_typography.scss";
+@import "./utility/_keyframes.scss";
+
 /* COMPONENT IMPORTS */
 @import "./components/_app.component.scss";
 @import "./components/_button.component.scss";
@@ -5,6 +9,4 @@
 @import "./components/_header.component.scss";
 @import "./components/_main.component.scss";
 @import "./components/_settings.component.scss";
-
-/* UTILITY IMPORTS */
-@import "./utility/_typography.scss";
+@import "./components/_backdrop.component.scss"

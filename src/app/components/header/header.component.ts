@@ -1,33 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ButtonComponent } from '../common';
 import { GameControlsService } from '../../services/game-controls.service';
+import { CommonModule } from '@angular/common';
+import { SettingsStatusEnum } from '../../enums/settings-status.enum';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [ButtonComponent],
-  providers: [GameControlsService],
+  imports: [ButtonComponent, CommonModule],
   templateUrl: './header.component.html',
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
+  iconSpin = false;
+  settingsOpen: any;
+
   constructor(private gameControlsService: GameControlsService) {}
 
-  // Arrow function in order to prevent 'this' binding to child
+  ngOnInit(): void {
+    this.settingsOpen =
+      this.gameControlsService.settingsStatusObservable.subscribe((r) => {
+        this.iconSpin = r === SettingsStatusEnum.OPEN ? true : false;
+      });
+  }
+
   start = () => {
     this.gameControlsService.start();
   };
 
-  // Arrow function in order to prevent 'this' binding to child
   reset = () => {
     this.gameControlsService.reset();
   };
 
-  // Arrow function in order to prevent 'this' binding to child
   focus = () => {
     this.gameControlsService.toggleFocus();
   };
 
   toggleSettings = () => {
-    this.gameControlsService;
+    this.gameControlsService.toggleSettings();
   };
 }

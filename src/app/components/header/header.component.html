@@ -1,6 +1,8 @@
 <header class="header">
   <i
-    class="settings-icon fa fa-gear fa-5x text-gold text-shadow-gold" (click)="toggleSettings()"
+    class="settings-icon fa fa-gear fa-5x text-gold text-shadow-gold"
+    (click)="toggleSettings()"
+    [ngClass]="{ 'fa-spin': iconSpin }"
   ></i>
   <h1 class="heading uppercase underline semi-bold text-gold text-shadow-gold">
     memory game
