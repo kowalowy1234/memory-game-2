@@ -1,4 +1,7 @@
 <router-outlet> </router-outlet>
 <app-header></app-header>
-<app-settings [ngClass]="{ visible: showSettings }"></app-settings>
-<app-main></app-main>
+<div class="container">
+  <app-settings [ngClass]="{ visible: showSettings }"></app-settings>
+  <app-main></app-main>
+  <app-info-sidebar></app-info-sidebar>
+</div>

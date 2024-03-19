@@ -1,0 +1,55 @@
+<div class="info-sidebar">
+  <hr />
+  <div class="row">
+    <span class="label text-white uppercase">pairs left</span>
+    <span class="value text-white text-shadow-white semi-bold uppercase"
+      >2</span
+    >
+  </div>
+  <div class="row">
+    <span class="label text-white uppercase">attempts</span>
+    <span class="value text-white text-shadow-white semi-bold uppercase"
+      >3</span
+    >
+  </div>
+  <div class="row">
+    <span class="label text-white uppercase">misses</span>
+    <span class="value text-white text-shadow-white semi-bold uppercase"
+      >2</span
+    >
+  </div>
+  <hr />
+  <div class="timer">
+    <h3 class="title text-white text-shadow-white uppercase thiner">
+      time left
+    </h3>
+    <p class="time text-white text-shadow-white bold">10.323 s</p>
+  </div>
+  <hr />
+  <div class="buttons">
+    <h3 class="title text-white text-shadow-white uppercase thiner">
+      game controls
+    </h3>
+    <app-button theme="green" buttonText="start" [click]="start"></app-button>
+    <app-button theme="red" buttonText="reset" [click]="reset"></app-button>
+    <app-button buttonText="focus mode" [click]="focus"></app-button>
+    <app-button buttonText="settings" [click]="toggleSettings"></app-button>
+  </div>
+  <hr />
+  <h3
+    class="title player-list-title text-white uppercase thiner text-shadow-white"
+    (click)="togglePlayerList()"
+  >
+    <p>player list</p>
+    <i class="fa fa-chevron-down text-shadow-white" [ngClass]="{ down: hidePlayerList, up: !hidePlayerList}"></i>
+  </h3>
+  <div class="player-list-container">
+    <ul class="player-list" [ngClass]="{ hidden: hidePlayerList }">
+      <li class="player-name text-gold">player 1</li>
+      <li class="player-name text-gold">player 2</li>
+      <li class="player-name text-gold">player 3</li>
+      <li class="player-name text-gold">player 4</li>
+    </ul>
+  </div>
+  <hr />
+</div>

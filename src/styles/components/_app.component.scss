@@ -1,8 +1,8 @@
 app-root {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  flex-wrap: wrap;
 
   background: linear-gradient(
       241deg,
@@ -13,6 +13,10 @@ app-root {
     ),
     url("../../assets/images/patternhead61a-thumb.png"),
     lightgray 0% 0% / 300px 300px repeat;
+
+    .container {
+
+    }
 }
 
 @media (min-width: $breakpoint-large) {

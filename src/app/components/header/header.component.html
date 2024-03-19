@@ -1,16 +1,7 @@
 <header class="header">
-  <i
-    class="settings-icon fa fa-gear fa-5x text-gold text-shadow-gold"
-    (click)="toggleSettings()"
-    [ngClass]="{ 'fa-spin': iconSpin }"
-  ></i>
   <h1 class="heading uppercase underline semi-bold text-gold text-shadow-gold">
     memory game
   </h1>
-  <div class="empty"></div>
 </header>
 <div class="buttons">
-  <app-button theme="green" buttonText="start" [click]="start"></app-button>
-  <app-button theme="red" buttonText="reset" [click]="reset"></app-button>
-  <app-button buttonText="focus" [click]="focus"></app-button>
 </div>
