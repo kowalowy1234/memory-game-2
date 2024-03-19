@@ -1,8 +1,8 @@
 app-root {
   min-height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
 
   background: linear-gradient(
       241deg,
@@ -14,8 +14,17 @@ app-root {
     url("../../assets/images/patternhead61a-thumb.png"),
     lightgray 0% 0% / 300px 300px repeat;
 
-    .container {
-      max-height: 100Vh;
+    .left-panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    
+    .right-panel {
+      // max-height: 100Vh;
+      min-height: 100vh;
     }
 }
 
