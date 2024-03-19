@@ -7,19 +7,21 @@ import { MainComponent } from './components';
 import { GameControlsService } from './services/game-controls.service';
 import { SettingsStatusEnum } from './enums/settings-status.enum';
 import { BackdropComponent } from './components/common/backdrop/backdrop.component';
+import { InfoSidebarComponent } from "./components/info-sidebar/info-sidebar.component";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  templateUrl: './app.component.html',
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    HeaderComponent,
-    SettingsComponent,
-    MainComponent,
-    BackdropComponent,
-  ],
+    selector: 'app-root',
+    standalone: true,
+    templateUrl: './app.component.html',
+    imports: [
+        CommonModule,
+        RouterOutlet,
+        HeaderComponent,
+        SettingsComponent,
+        MainComponent,
+        BackdropComponent,
+        InfoSidebarComponent
+    ]
 })
 export default class AppComponent implements OnInit {
   title = 'memory-game-2';

@@ -1,5 +1,4 @@
 $border: solid $color-bright-border 0.4rem;
-$box-shadow: 0 0 3rem $color-bright-shadow;
 
 app-settings {
   app-button {
@@ -105,7 +104,7 @@ app-settings {
     font-size: 4rem;
     cursor: pointer;
     color: $color-plain-purple;
-    box-shadow: $box-shadow;
+    box-shadow: $bright-box-shadow;
   }
 }
 

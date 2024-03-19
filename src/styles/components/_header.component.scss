@@ -1,10 +1,12 @@
 app-header {
-  order: 1;
-  margin: 5rem auto;
+  margin: 5rem auto 0 auto;
+  height: min-content;
+
   .header {
     display: flex;
-    align-items: center;
     margin-bottom: 3rem;
+    gap: 4.5rem;
+    width: 100%;
 
     .heading {
       font-size: 5rem;
@@ -12,22 +14,12 @@ app-header {
       margin-bottom: 1.2rem;
       letter-spacing: 0.6rem;
       text-align: center;
-      flex: 10;
-    }
-
-    .settings-icon {
-      cursor: pointer;
-    }
-
-    .empty {
-      flex: 1;
     }
   }
 }
 
 @media (min-width: $breakpoint-medium) {
   app-header {
-    order: 2;
   }
 }
 
