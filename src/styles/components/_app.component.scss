@@ -1,7 +1,7 @@
 app-root {
   min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   flex-wrap: wrap;
 
   background: linear-gradient(
@@ -15,12 +15,10 @@ app-root {
     lightgray 0% 0% / 300px 300px repeat;
 
     .container {
-
     }
 }
 
 @media (min-width: $breakpoint-large) {
   app-root {
-    flex-direction: row;
   }
 }

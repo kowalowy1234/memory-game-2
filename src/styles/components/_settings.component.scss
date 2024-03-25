@@ -14,7 +14,7 @@ app-settings {
   height: 100vh;
   width: 100% !important;
   z-index: 11 !important;
-  opacity: 0;
+  // opacity: 0;
   transition: $ts02;
   backdrop-filter: blur(0.4rem);
   background-color: $color-plain-purple-transparent;
